@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+
+int main()
+{
+	int n;
+	std::cin >> n;
+
+	int max = INT_MIN;
+	int sum = 0;
+
+	for (int number = 1; number <= n; number++)
+	{
+		int value;
+		std::cin >> value;
+		sum += value;
+		if (value > max)
+		{
+			max = value;
+		}
+	}
+	
+	int sumOthers = sum - max;
+
+	if (max == sumOthers)
+	{
+		std::cout << "Yes" << std::endl;
+		std::cout << "Sum = " << max << std::endl;
+	}
+	else
+	{
+		std::cout << "No" << std::endl;
+		std::cout << "Diff = " << abs(max - sumOthers) << std::endl;
+	}
+
+	return 0;
+}
