@@ -1,0 +1,41 @@
+#include <iostream>
+
+int main()
+{
+	int countTabs;
+	int salary;
+
+	std::cin >> countTabs >> salary;
+
+	for (int tab = 1; tab <= countTabs; tab++)
+	{
+		std::string website;
+		std::cin >> website;
+
+		if (website == "Facebook")
+		{
+			salary -= 150;
+		}
+		else if (website == "Instagram")
+		{
+			salary -= 100;
+		}
+		else if (website == "Reddit")
+		{
+			salary -= 50;
+		}
+
+		if (salary <= 0)
+		{
+			std::cout << "You have lost your salary." << std::endl;
+			break;
+		}
+	}
+
+	if (salary > 0)
+	{
+		std::cout << salary << std::endl;
+	}
+
+	return 0;
+}
