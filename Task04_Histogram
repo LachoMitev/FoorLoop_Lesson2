@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	int countFirstGroup = 0, countSecondGroup = 0, countThirdGroup = 0, countFourthGroup = 0, countFifthGroup = 0;
+
+	for (int number = 1; number <= n; number++)
+	{
+		int value;
+		cin >> value;
+
+		if (value < 200)
+		{
+			countFirstGroup++;
+		}
+		else if (value >= 200 && value <= 399)
+		{
+			countSecondGroup++;
+		}
+		else if (value >= 400 && value <= 599)
+		{
+			countThirdGroup++;
+		}
+		else if (value >= 600 && value <= 799)
+		{
+			countFourthGroup++;
+		}
+		else if (value >= 800)
+		{
+			countFifthGroup++;
+		}
+	}
+
+
+	double p1 = (countFirstGroup /( n *1.00) * 100);
+	double p2 = (countSecondGroup / (n * 1.00)*100);
+	double p3 = (countThirdGroup /( n * 1.00)*100);
+	double p4 = (countFourthGroup /( n *1.00 )*100);
+	double p5 = (countFifthGroup / (n * 1.00)*100);
+
+	cout.precision(2);
+	cout << std::fixed;
+	cout << p1 << "%" << std::endl;
+	cout << p2 << "%" << std::endl;
+	cout << p3 << "%" << std::endl;
+	cout << p4 << "%" << std::endl;
+	cout << p5 << "%" << std::endl;
+
+
+	return 0;
+}
