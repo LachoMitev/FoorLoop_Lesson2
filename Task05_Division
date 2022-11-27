@@ -1,0 +1,45 @@
+#include <iostream>
+
+#include <climits>
+
+int main()
+{
+
+	int n;
+	std::cin >> n;
+
+	int firstGroup = 0;
+	int secondGroup = 0;
+	int thirdGroup = 0;
+
+	for (int i = 1; i <= n; i++)
+	{
+		int num;
+		std::cin >> num;
+
+		if (num % 2 == 0)
+		{
+			firstGroup++;
+		}
+		if (num % 3 == 0)
+		{
+			secondGroup++;
+		}
+		if (num % 4 == 0)
+		{
+			thirdGroup++;
+		}
+	}
+
+	double p1 = (firstGroup / (n *1.00))* 100;
+	double p2 = (secondGroup / (n * 1.00)) * 100;
+	double p3 = (thirdGroup / (n * 1.00)) * 100;
+
+	std::cout.precision(2);
+	std::cout << std::fixed;
+	std::cout << p1 << "%" << std::endl;
+	std::cout << p2 << "%" << std::endl;
+	std::cout << p3 << "%" << std::endl;
+
+	return 0;
+}
